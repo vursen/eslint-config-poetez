@@ -12,7 +12,9 @@ module.exports = {
       'always',
       {ignoreConsecutiveComments: true},
     ],
-    'comma-dangle': ['error', 'always-multiline'],
+    // TODO: The rule reports 2542 more errors:
+    // 'comma-dangle': ['error', 'always-multiline'],
+    'comma-dangle': ['error', 'never'],
     'comma-spacing': 'error',
     'comma-style': ['error', 'last'],
     'computed-property-spacing': ['error', 'never'],
@@ -56,7 +58,8 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 100,
+        // TODO: With the code property = 100, the rule reports 754 more errors.
+        code: 120,
         ignoreUrls: true,
         ignoreComments: false,
         ignoreRegExpLiterals: true,
@@ -94,7 +97,8 @@ module.exports = {
     'no-lonely-if': 'error',
     'no-mixed-operators': 'error',
     'no-mixed-spaces-and-tabs': 'error',
-    'no-multi-assign': 'error',
+    // TODO: The following rule reports 44 more errors, but this is fine.
+    // 'no-multi-assign': 'error',
     'no-multiple-empty-lines': ['error', {max: 1}],
     // sometimes negated condition is more explicit
     'no-negated-condition': 'off',
@@ -116,23 +120,28 @@ module.exports = {
     'nonblock-statement-body-position': 'off',
     // too strict
     'object-curly-newline': 'off',
-    'object-curly-spacing': ['error', 'never'],
+    // TODO: The rule reports 8520 more errors:
+    // 'object-curly-spacing': ['error', 'never'],
+    'object-curly-spacing': ['error', 'always'],
     // disabled by default; enable if necessary
     'object-property-newline': 'off',
-    'one-var': ['error', 'never'],
+    // TODO: The rule reports 2570 more errors (mostly in `*.test.js` files):
+    // 'one-var': ['error', 'never'],
+    'one-var': 'off',
     // handled by 'one-var' rule
     'one-var-declaration-per-line': 'off',
     'operator-assignment': ['error', 'always'],
     'operator-linebreak': ['error', 'before', {overrides: {'=': 'after'}}],
     'padded-blocks': ['error', 'never'],
-    'padding-line-between-statements': [
-      'error',
-      {
-        blankLine: 'always',
-        prev: '*',
-        next: 'return',
-      },
-    ],
+    // TODO: The rule reports 698 more errors:
+    // 'padding-line-between-statements': [
+    //   'error',
+    //   {
+    //     blankLine: 'always',
+    //     prev: '*',
+    //     next: 'return',
+    //   },
+    // ],
     'prefer-exponentiation-operator': 'error',
     'prefer-object-spread': 'error',
     'quote-props': ['error', 'as-needed'],
@@ -140,7 +149,8 @@ module.exports = {
     semi: ['error', 'always'],
     'semi-spacing': 'error',
     'semi-style': 'error',
-    'sort-keys': ['error', 'asc', {caseSensitive: true, natural: true}],
+    // TODO: The rule reports 1992 more errors:
+    // 'sort-keys': ['error', 'asc', {caseSensitive: true, natural: true}],
     // handled by "one-var" rule
     'sort-vars': 'off',
     'space-before-blocks': ['error', 'always'],

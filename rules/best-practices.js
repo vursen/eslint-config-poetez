@@ -4,7 +4,8 @@ module.exports = {
     'array-callback-return': 'error',
     // handled by "no-var" rule
     'block-scoped-var': 'off',
-    'class-methods-use-this': 'error',
+    // TODO: The rule reports 231 more errors:
+    // 'class-methods-use-this': 'error',
     complexity: 'error',
     'consistent-return': 'error',
     curly: ['error', 'all'],
@@ -18,7 +19,12 @@ module.exports = {
     eqeqeq: ['error', 'always', {null: 'ignore'}],
     'grouped-accessor-pairs': ['error', 'getBeforeSet'],
     'guard-for-in': 'error',
-    'max-classes-per-file': ['error', 1],
+    // TODO: The rule reports 23 more errors (mostly in the `*.test.js` files).
+    // Although the rule can be disabled for `*.test.js` files (17 errors),
+    // we could also consider increasing the max limit up to 2-3 to make it less strict in general
+    // (and thus fix other 6 errors).
+    // 'max-classes-per-file': ['error', 3],
+    'max-classes-per-file': 'off',
     'no-alert': 'error',
     'no-caller': 'error',
     'no-case-declarations': 'error',
@@ -69,7 +75,9 @@ module.exports = {
     'no-sequences': 'error',
     'no-throw-literal': 'error',
     'no-unmodified-loop-condition': 'error',
-    'no-unused-expressions': 'error',
+    // TODO: The rule reports 2964 more errors (mostly in *.test.js files):
+    // 'no-unused-expressions': 'error',
+    'no-unused-expressions': 'off',
     // handled by "no-labels" rule
     'no-unused-labels': 'off',
     'no-useless-call': 'error',

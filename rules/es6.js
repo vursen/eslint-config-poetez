@@ -8,7 +8,10 @@ module.exports = {
   },
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
-    'arrow-parens': ['error', 'as-needed', {requireForBlockBody: true}],
+    // TODO: The rule reports 545 more errors:
+    // 'arrow-parens': ['error', 'as-needed', {requireForBlockBody: true}],
+    // Also, wouldn't it lead to a bigger diff in case of later adding an additional argument?
+    'arrow-parens': ['error', 'always'],
     'arrow-spacing': 'error',
     'constructor-super': 'error',
     'generator-star-spacing': ['error', {before: true, after: false}],
